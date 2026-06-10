@@ -36,10 +36,7 @@ import { Services } from "@/components/services";
  */
 function Hero() {
   return (
-    <section
-      className="relative isolate w-full overflow-hidden"
-      style={{ height: "100dvh", minHeight: "620px", maxHeight: "960px" }}
-    >
+    <section className="relative isolate w-full overflow-hidden h-[100dvh] lg:h-[98dvh] min-h-[620px] max-h-[960px]">
       {/* ── Global dim overlay ── */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
@@ -188,16 +185,7 @@ function Hero() {
         </p>
 
         <h1
-          className="leading-none text-white"
-          style={{
-            fontFamily: "var(--font-heading)",
-            fontWeight: 700,
-            fontSize: "clamp(2.8rem, 8vw, 7rem)",
-            textTransform: "uppercase",
-            textShadow: "0 2px 32px rgba(0,0,0,0.5)",
-            letterSpacing: "-0.01em",
-          }}
-        >
+          className="font-heading text-[clamp(2.8rem,8vw,5rem)] 2xl:text-[7rem] font-bold uppercase leading-none tracking-[-0.01em] text-white drop-shadow-[0_2px_32px_rgba(0,0,0,0.5)]">
           <span className="block">From</span>
           <span className="block" style={{ color: "var(--fto-red)" }}>The</span>
           <span className="block">Origin</span>
@@ -236,7 +224,7 @@ function Hero() {
 function AboutSnippet() {
   return (
     <section id="about" className="bg-background">
-      <div className="mx-auto container px-4 py-20 md:py-28">
+      <div className="mx-auto container px-4 xl:px-28 py-20 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:gap-20 md:items-start">
           <div>
             <div
