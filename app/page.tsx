@@ -179,13 +179,13 @@ function Hero() {
       </div>
 
       {/* ── Teks + CTA overlay ── */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
         <p className="mb-3 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.22em] text-white/60">
           Sport & Travel Experience Management
         </p>
 
         <h1
-          className="font-heading text-[clamp(2.8rem,8vw,5rem)] 2xl:text-[7rem] font-bold uppercase leading-none tracking-[-0.01em] text-white drop-shadow-[0_2px_32px_rgba(0,0,0,0.5)]">
+          className="font-heading text-[clamp(2.8rem,8vw,4.5rem)] 2xl:text-[6rem] font-bold uppercase leading-none tracking-[-0.01em] text-white drop-shadow-[0_2px_32px_rgba(0,0,0,0.5)]">
           <span className="block">From</span>
           <span className="block" style={{ color: "var(--fto-red)" }}>The</span>
           <span className="block">Origin</span>
@@ -224,7 +224,7 @@ function Hero() {
 function AboutSnippet() {
   return (
     <section id="about" className="bg-background">
-      <div className="mx-auto container px-4 xl:px-28 py-20 md:py-28">
+      <div className="mx-auto container px-4 py-20 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:gap-20 md:items-start">
           <div>
             <div
