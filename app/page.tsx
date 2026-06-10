@@ -17,6 +17,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Navbar } from "@/components/navbar";
 import { faqs, mosaicCards, testimonials } from "@/lib/data";
 import { Services } from "@/components/services";
+import FeaturedSlider from "@/components/slider";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -502,6 +503,7 @@ export default function Home() {
         <Hero />
         <AboutSnippet />
         <Services />
+        <FeaturedSlider />
         <Testimonials />
         <FAQ />
         <CTA />
