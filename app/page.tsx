@@ -236,7 +236,7 @@ function Hero() {
 function AboutSnippet() {
   return (
     <section id="about" className="bg-background">
-      <div className="mx-auto max-w-7xl py-20 md:py-28">
+      <div className="mx-auto container px-4 py-20 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:gap-20 md:items-start">
           <div>
             <div
