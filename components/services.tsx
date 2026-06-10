@@ -68,14 +68,14 @@ export function Services() {
                             return (
                                 <Card
                                     key={s.category}
-                                    className="group border-border/60 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                                    className="relative group border-border/60 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
                                 >
                                     <CardHeader>
                                         <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-muted text-muted-foreground transition-colors group-hover:bg-red-50 group-hover:text-primary">
                                             <Icon className="h-5 w-5" />
                                         </div>
 
-                                        <div className="space-y-1 min-h-36.25 mt-4">
+                                        <div className="space-y-1 mt-4">
                                             <CardTitle className="text-sm font-semibold leading-snug">
                                                 {s.title}
                                             </CardTitle>
@@ -85,7 +85,7 @@ export function Services() {
                                         </div>
                                     </CardHeader>
 
-                                    <CardContent>
+                                    <CardContent className="mb-16">
                                         <div className="flex flex-wrap gap-1">
                                             {s.tags.slice(0, 3).map((tag) => (
                                                 <Badge
@@ -99,7 +99,7 @@ export function Services() {
                                         </div>
                                     </CardContent>
 
-                                    <CardFooter>
+                                    <CardFooter className="absolute bottom-4">
                                         <Button
                                             asChild
                                             variant="ghost"
