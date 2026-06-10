@@ -17,7 +17,19 @@ import { services } from "@/lib/data";
 
 export function Services() {
     return (
-        <section id="services" className="bg-background py-20">
+        <section id="services" className="relative bg-background py-20">
+
+            <div
+                className="
+    absolute inset-0 opacity-[0.04]
+    [background-image:repeating-linear-gradient(-45deg,#0f172a_0,#0f172a_1px,transparent_1px,transparent_28px)]
+    [mask-image:linear-gradient(to_bottom,transparent_0%,black_20%,black_80%,transparent_100%)]
+    [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_20%,black_80%,transparent_100%)]
+  "
+            />
+
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(200,16,46,0.12)_0%,transparent_20%)]" />
+
             <div className="mx-auto container px-4">
                 <div className="grid gap-4 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
                     <Card
