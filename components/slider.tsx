@@ -8,6 +8,7 @@ import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { getWaLink } from "@/lib/data";
 
 type SlideItem = {
     category: string;
@@ -105,7 +106,7 @@ export default function FeaturedSlider() {
 
     return (
         <section id="featured" className="relative bg-background py-20 md:py-28">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(200,16,46,0.12)_0%,transparent_20%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(200,16,46,0.12)_0%,transparent_20%)] pointer-events-none" />
             <div className="mx-auto container px-4 sm:px-6 lg:px-8">
                 <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                     <div>
@@ -129,7 +130,7 @@ export default function FeaturedSlider() {
                         </h2>
                     </div>
 
-                    <Button
+                    {/* <Button
                         asChild
                         variant="ghost"
                         className="h-auto self-start p-0 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--fto-red)] hover:bg-transparent hover:text-[var(--fto-red)] md:self-end"
@@ -138,7 +139,7 @@ export default function FeaturedSlider() {
                             Semua Destinasi
                             <ArrowUpRight className="h-4 w-4" />
                         </Link>
-                    </Button>
+                    </Button> */}
                 </div>
 
                 <Card className="relative h-[540px] overflow-hidden border-0 shadow-2xl shadow-black/15">
@@ -340,7 +341,12 @@ export default function FeaturedSlider() {
                         variant="ghost"
                         className="h-auto p-0 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--fto-red)] hover:bg-transparent hover:text-[var(--fto-red)]"
                     >
-                        <Link href="#konsultasi" className="inline-flex items-center gap-2">
+                        <Link
+                            href={getWaLink("Halo, saya ingin konsultasi layanan FTO.")}
+                            className="inline-flex items-center gap-2"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             Konsultasi Gratis
                             <ArrowUpRight className="h-4 w-4" />
                         </Link>

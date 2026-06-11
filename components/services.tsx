@@ -13,22 +13,22 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
-import { services } from "@/lib/data";
+import { getWaLink, services } from "@/lib/data";
 
-export function Services() {
+export default function Services() {
     return (
         <section id="services" className="relative bg-background py-20">
 
             <div
                 className="
-    absolute inset-0 opacity-[0.04]
-    [background-image:repeating-linear-gradient(-45deg,#0f172a_0,#0f172a_1px,transparent_1px,transparent_28px)]
-    [mask-image:linear-gradient(to_bottom,transparent_0%,black_20%,black_80%,transparent_100%)]
-    [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_20%,black_80%,transparent_100%)]
-  "
+                    pointer-events-none absolute inset-0 opacity-[0.04]
+                    bg-[repeating-linear-gradient(-45deg,#0f172a_0,#0f172a_1px,transparent_1px,transparent_28px)]
+                    mask-[linear-gradient(to_bottom,transparent_0%,black_20%,black_80%,transparent_100%)]
+                    [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_20%,black_80%,transparent_100%)]
+                "
             />
 
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(200,16,46,0.12)_0%,transparent_20%)]" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(200,16,46,0.12)_0%,transparent_20%)]" />
 
             <div className="mx-auto container px-4 sm:px-6 lg:px-8">
                 <div className="grid gap-4 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
@@ -62,10 +62,14 @@ export function Services() {
                         <CardFooter>
                             <Button
                                 asChild
-                                className="w-fit rounded-full bg-white font-semibold text-primary hover:bg-white/90 active:scale-[.98]"
+                                variant={"white"}
                             >
-                                <Link href="#contact">
-                                    Jelajahi semua layanan
+                                <Link
+                                    href={getWaLink("Halo, saya ingin konsultasi layanan FTO.")}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Konsultasi Gratis
                                     <ArrowRight className="ml-2 h-4 w-4" />
                                 </Link>
                             </Button>
@@ -117,8 +121,13 @@ export function Services() {
                                             variant="ghost"
                                             className="h-8 px-0 text-sm font-medium text-foreground/80 hover:bg-transparent hover:text-foreground"
                                         >
-                                            <Link href="#contact" className="inline-flex items-center gap-2">
-                                                Pelajari lebih lanjut
+                                            <Link
+                                                href={getWaLink("Halo, saya ingin konsultasi layanan FTO.")}
+                                                className="inline-flex items-center gap-2"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                Tanya Layanan Ini
                                                 <ArrowRight className="h-4 w-4" />
                                             </Link>
                                         </Button>

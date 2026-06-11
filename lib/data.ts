@@ -185,3 +185,8 @@ export const services = [
     },
 ];
 
+const WA_NUMBER = "628211389162";
+
+export function getWaLink(message: string) {
+    return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+}
