@@ -29,7 +29,7 @@ const slides: SlideItem[] = [
         badge: "Terbatas",
         image:
             "https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=1170&auto=format&fit=crop",
-        href: "/destinasi/tour-de-france",
+        href: "#",
     },
     {
         category: "Marathon",
@@ -40,7 +40,7 @@ const slides: SlideItem[] = [
         badge: "Early Bird",
         image:
             "https://images.unsplash.com/photo-1596727147705-61a532a659bd?q=80&w=1170&auto=format&fit=crop",
-        href: "/destinasi/tokyo-marathon",
+        href: "#",
     },
     {
         category: "Tennis · Grand Slam",
@@ -51,7 +51,7 @@ const slides: SlideItem[] = [
         badge: "Eksklusif",
         image:
             "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=1170&auto=format&fit=crop",
-        href: "/destinasi/wimbledon",
+        href: "#",
     },
     {
         category: "Football · Premier League",
@@ -62,7 +62,7 @@ const slides: SlideItem[] = [
         badge: "Terpopuler",
         image:
             "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1600&auto=format&fit=crop",
-        href: "/destinasi/old-trafford",
+        href: "#",
     },
     {
         category: "Tennis · Lokal",
@@ -73,7 +73,7 @@ const slides: SlideItem[] = [
         badge: "Mitra Resmi",
         image:
             "https://images.unsplash.com/photo-1542144582-1ba00456b5e3?q=80&w=1170&auto=format&fit=crop",
-        href: "/destinasi/kula-mani",
+        href: "#",
     },
 ];
 
@@ -106,7 +106,7 @@ export default function FeaturedSlider() {
     return (
         <section id="featured" className="relative bg-background py-20 md:py-28">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(200,16,46,0.12)_0%,transparent_20%)]" />
-            <div className="mx-auto container px-4">
+            <div className="mx-auto container px-4 sm:px-6 lg:px-8">
                 <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                     <div>
                         <div

@@ -30,7 +30,7 @@ export function Services() {
 
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(200,16,46,0.12)_0%,transparent_20%)]" />
 
-            <div className="mx-auto container px-4">
+            <div className="mx-auto container px-4 sm:px-6 lg:px-8">
                 <div className="grid gap-4 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
                     <Card
                         className="self-start overflow-hidden border-0 shadow-none h-fit"
