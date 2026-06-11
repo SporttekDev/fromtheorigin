@@ -38,7 +38,7 @@ import { Footer } from "@/components/footer";
  */
 function Hero() {
   return (
-    <section className="relative isolate w-full overflow-hidden h-[100dvh] lg:h-[98dvh] min-h-[620px] max-h-[960px]">
+    <section className="relative isolate w-full overflow-hidden h-dvh lg:h-[98dvh] min-h-155 max-h-240">
       {/* ── Global dim overlay ── */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
@@ -429,8 +429,26 @@ function FAQ() {
 
 function CTA() {
   return (
-    <section className="py-24" style={{ backgroundColor: "var(--fto-navy)" }}>
-      <div className="mx-auto max-w-4xl px-8 text-center">
+    <section
+      className="relative isolate overflow-hidden bg-secondary-foreground py-24"
+    >
+      {/* Backlayer logo */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute left-1/2 -top-1/2 h-300 w-300 -translate-x-1/2">
+          <Image
+            src="/logo-fto.svg"
+            alt=""
+            aria-hidden="true"
+            fill
+            className="object-contain opacity-[0.2] blur-[0.5px]"
+          />
+        </div>
+
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08)_0%,transparent_55%)]" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-black/10" />
+      </div>
+
+      <div className="relative mx-auto max-w-4xl px-8 text-center">
         <h2
           className="leading-tight text-white"
           style={{
@@ -443,10 +461,12 @@ function CTA() {
           Siap Memulai{" "}
           <span style={{ color: "var(--fto-red)" }}>Perjalanan</span> Anda?
         </h2>
+
         <p className="mx-auto mt-6 max-w-xl text-base text-white/60">
           Ceritakan kebutuhan Anda kepada kami. Kami akan merancang perjalanan
           yang tidak hanya memenuhi ekspektasi — tapi melampauinya.
         </p>
+
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <Button
             size="lg"
@@ -455,6 +475,7 @@ function CTA() {
           >
             Konsultasi Gratis
           </Button>
+
           <Button
             size="lg"
             variant="outline"
