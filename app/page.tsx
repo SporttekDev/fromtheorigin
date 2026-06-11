@@ -18,6 +18,7 @@ import { Navbar } from "@/components/navbar";
 import { faqs, mosaicCards, testimonials } from "@/lib/data";
 import { Services } from "@/components/services";
 import FeaturedSlider from "@/components/slider";
+import { Footer } from "@/components/footer";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -225,7 +226,7 @@ function Hero() {
 function AboutSnippet() {
   return (
     <section id="about" className="bg-background">
-      <div className="mx-auto container px-4 py-20 md:py-28">
+      <div className="mx-auto container sm:px-6 lg:px-8 py-20 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:gap-20 md:items-start">
           <div>
             <div
@@ -467,31 +468,31 @@ function CTA() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="border-t border-border bg-background py-10">
-      <div className="mx-auto max-w-6xl px-8">
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <div className="flex items-center gap-3">
-            <div
-              className="flex h-7 w-7 items-center justify-center rounded-full"
-              style={{ backgroundColor: "var(--fto-red)" }}
-            >
-              <span className="text-[10px] font-bold text-white">FTO</span>
-            </div>
-            <span className="text-sm font-semibold text-foreground">
-              From The Origin
-            </span>
-          </div>
-          <p className="text-xs text-muted-foreground">
-            © 2026 From The Origin. Curating seamless sport, travel & leisure
-            experiences worldwide.
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-}
+// function Footer() {
+//   return (
+//     <footer className="border-t border-border bg-background py-10">
+//       <div className="mx-auto max-w-6xl px-8">
+//         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+//           <div className="flex items-center gap-3">
+//             <div
+//               className="flex h-7 w-7 items-center justify-center rounded-full"
+//               style={{ backgroundColor: "var(--fto-red)" }}
+//             >
+//               <span className="text-[10px] font-bold text-white">FTO</span>
+//             </div>
+//             <span className="text-sm font-semibold text-foreground">
+//               From The Origin
+//             </span>
+//           </div>
+//           <p className="text-xs text-muted-foreground">
+//             © 2026 From The Origin. Curating seamless sport, travel & leisure
+//             experiences worldwide.
+//           </p>
+//         </div>
+//       </div>
+//     </footer>
+//   );
+// }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
