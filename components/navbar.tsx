@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
     ChevronDown,
@@ -52,30 +53,39 @@ export function Navbar() {
         // Wrapper positioning — floating dari edge
         <div
             data-navbar
-            className="fixed inset-x-0 top-0 z-50 px-4 pt-3"
+            className="fixed inset-x-0 top-0 z-50 px-4 sm:px-6 lg:px-8 pt-3"
         >
             {/* ── Pill navbar ── */}
             <header
                 className={`mx-auto max-w-7xl rounded-2xl transition-all duration-300 ${scrolled
-                        ? "border border-border/60 bg-background/90 backdrop-blur-md shadow-lg shadow-black/5"
-                        : "bg-transparent backdrop-blur-md"
+                    ? "border border-border/60 bg-background/90 backdrop-blur-md shadow-lg shadow-black/5"
+                    : "bg-transparent backdrop-blur-md"
                     }`}
             >
                 <div className="flex h-14 items-center justify-between px-4 sm:px-5">
 
                     {/* Logo */}
-                    <Link href="#" className="flex items-center gap-2.5 shrink-0">
-                        <div
-                            className="flex h-8 w-8 items-center justify-center rounded-lg text-[11px] font-bold tracking-tight text-white"
-                            style={{ backgroundColor: "var(--fto-red)" }}
-                        >
-                            FTO
-                        </div>
+
+                    <Link href="#" className="flex shrink-0 items-center gap-2.5">
+                        <Image
+                            src="/images/logo-fto.png"
+                            alt="From The Origin"
+                            width={48}
+                            height={48}
+                            className="h-8 w-auto"
+                            priority
+                        />
+
                         <div className="leading-tight">
-                            <p className={`text-sm font-semibold tracking-tight transition-colors duration-300 ${textStrong}`}>
+                            <p
+                                className={`text-sm font-semibold tracking-tight transition-colors duration-300 ${textStrong}`}
+                            >
                                 From The Origin
                             </p>
-                            <p className={`text-[9px] uppercase tracking-widest transition-colors duration-300 ${textMuted}`}>
+
+                            <p
+                                className={`text-[9px] uppercase tracking-widest transition-colors duration-300 ${textMuted}`}
+                            >
                                 Sport & Travel
                             </p>
                         </div>
@@ -97,8 +107,8 @@ export function Navbar() {
                         <button
                             onClick={() => setMegaOpen((o) => !o)}
                             className={`inline-flex h-8 items-center gap-1.5 rounded-lg px-3.5 text-sm font-medium transition-colors duration-200 ${megaOpen
-                                    ? "bg-accent text-foreground"
-                                    : `${textColor} ${textHover}`
+                                ? "bg-accent text-foreground"
+                                : `${textColor} ${textHover}`
                                 }`}
                         >
                             Layanan
@@ -113,8 +123,8 @@ export function Navbar() {
                         <Button
                             size="lg"
                             className={`hidden md:inline-flex ${scrolled
-                                    ? ""
-                                    : "border-white/30 bg-white/15 text-white backdrop-blur-sm hover:bg-white/25 hover:text-white"
+                                ? ""
+                                : "border-white/30 bg-white/15 text-white backdrop-blur-sm hover:bg-white/25 hover:text-white"
                                 }`}
                             style={{ backgroundColor: "var(--fto-red)", color: "white" }}
                             variant={"default"}
@@ -131,8 +141,8 @@ export function Navbar() {
                                         size="icon"
                                         aria-label="Buka menu navigasi"
                                         className={`h-8 w-8 transition-colors duration-300 ${scrolled
-                                                ? "text-foreground hover:bg-accent"
-                                                : "text-white hover:bg-white/15"
+                                            ? "text-foreground hover:bg-accent"
+                                            : "text-white hover:bg-white/15"
                                             }`}
                                     >
                                         <Menu className="h-4 w-4" />
