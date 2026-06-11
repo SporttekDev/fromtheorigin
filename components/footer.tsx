@@ -221,14 +221,16 @@ export default function Footer(props: Props) {
 
                         <div className="flex items-center gap-3 pt-1">
                             {socialLinks.map((social) => (
-                                <a
+                                <Link
                                     key={social.label}
                                     href={social.href}
                                     aria-label={social.label}
                                     className="flex size-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     {social.icon}
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </div>

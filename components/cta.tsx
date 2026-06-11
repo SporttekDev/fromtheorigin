@@ -1,5 +1,7 @@
+import { getWaLink } from "@/lib/data";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CTA() {
     return (
@@ -48,15 +50,13 @@ export default function CTA() {
                         className="h-12 px-10 text-sm font-semibold"
                         style={{ backgroundColor: "var(--fto-red)", color: "white" }}
                     >
-                        Konsultasi Gratis
-                    </Button>
-
-                    <Button
-                        size="lg"
-                        variant="outline"
-                        className="h-12 border-white/30 bg-transparent px-10 text-sm font-semibold text-white hover:bg-white/10 hover:text-white"
-                    >
-                        Lihat Portfolio Trip
+                        <Link
+                            href={getWaLink("Halo, saya ingin konsultasi layanan FTO.")}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Konsultasi Gratis
+                        </Link>
                     </Button>
                 </div>
             </div>

@@ -101,7 +101,13 @@ export default function Navbar() {
                             style={{ backgroundColor: "var(--fto-red)", color: "white" }}
                             variant="default"
                         >
-                            <Link href={getWaLink("Halo, saya ingin konsultasi layanan FTO.")}>Hubungi Kami</Link>
+                            <Link
+                                href={getWaLink("Halo, saya ingin konsultasi layanan FTO.")}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Hubungi Kami
+                            </Link>
                         </Button>
 
                         <div className="md:hidden">
