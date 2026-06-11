@@ -2,10 +2,14 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { Mail, MapPin, Phone } from "lucide-react";
-import { IconBrandFacebook, IconBrandLinkedin, IconBrandYoutube } from "@tabler/icons-react";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { Mail, MapPin, Phone } from "lucide-react";
+import {
+    IconBrandTiktok,
+    IconBrandInstagram,
+} from "@tabler/icons-react";
+
+import { cn } from "@/lib/utils";
 
 interface FooterLink {
     name: string;
@@ -42,7 +46,6 @@ interface FooterProps {
     contact?: FooterContact;
     sections?: FooterSection[];
     copyright?: string;
-    legalLinks?: FooterLink[];
     watermarkText?: string;
     className?: string;
 }
@@ -51,106 +54,89 @@ type Props = Partial<FooterProps>;
 
 const defaultProps: FooterProps = {
     logo: {
-        url: "/",
+        url: "#hero",
         src: "/images/logo-fto.png",
         alt: "FTO logo",
-        title: "FROM THE ORIGIN",
+        title: "From The Origin",
     },
     logoText: "FROM THE ORIGIN",
     contact: {
-        address: "Indonesia",
-        phone: "+62 812 3456 7890",
-        email: "hello@fto.id",
+        address: "PT. Sport Teknologi Indonesia, Jl. Raya Perjuangan, RT.002/RW.002, Marga Mulya, Kec. Bekasi Utara, Kota Bks, Jawa Barat 17124",
+        phone: "+62 821-1389-162",
+        email: "rekreasiolahragaindonesia@gmail.com",
     },
     sections: [
         {
-            title: "Layanan",
+            title: "Navigasi",
             links: [
-                { name: "Sport Tourism", href: "#" },
-                { name: "Travel Accommodations", href: "#" },
-                { name: "Transport Services", href: "#" },
+                { name: "Beranda", href: "#hero" },
+                { name: "Tentang FTO", href: "#about" },
+                { name: "Layanan", href: "#services" },
+                { name: "Destinasi", href: "#featured" },
+                { name: "FAQ", href: "#faq" },
+                { name: "Kontak", href: "#contact" },
             ],
         },
         {
-            title: "Perusahaan",
+            title: "Layanan Utama",
             links: [
-                { name: "Tentang Kami", href: "#" },
-                { name: "Portfolio", href: "#" },
-                { name: "Partnership", href: "#" },
+                { name: "Sport Tourism", href: "#services" },
+                { name: "Leisure Trip", href: "#services" },
+                { name: "Corporate Travel", href: "#services" },
+                { name: "Travel Accommodations", href: "#services" },
+                { name: "Transport Services", href: "#services" },
             ],
         },
         {
-            title: "Bantuan",
+            title: "Pengalaman",
             links: [
-                { name: "Kontak", href: "#" },
-                { name: "FAQ", href: "#" },
-                { name: "Syarat & Ketentuan", href: "#" },
-            ],
-        },
-        {
-            title: "Jelajahi",
-            links: [
-                { name: "Destinasi", href: "#" },
-                { name: "Event", href: "#" },
-                { name: "Blog", href: "#" },
+                { name: "Sport Events", href: "#featured" },
+                { name: "International Trips", href: "#featured" },
+                { name: "Group Tours", href: "#featured" },
+                { name: "Custom Journey", href: "#featured" },
             ],
         },
     ],
-    copyright: "© 2026 FTO. All rights reserved.",
-    legalLinks: [
-        { name: "Terms of Service", href: "#" },
-        { name: "Privacy Policy", href: "#" },
-    ],
+    copyright: "© 2026 From The Origin. All rights reserved.",
     watermarkText: "FROM THE ORIGIN",
 };
 
-const MAX_SECTIONS = 4;
-
-const Footer = (props: Props) => {
-    const {
-        logo,
-        logoText,
-        contact,
-        sections,
-        copyright,
-        legalLinks,
-        watermarkText,
-        className,
-    } = {
+export default function Footer(props: Props) {
+    const { logo, logoText, contact, sections, copyright, watermarkText, className } = {
         ...defaultProps,
         ...props,
     };
 
-    const visibleSections = (sections ?? []).slice(0, MAX_SECTIONS);
+    const visibleSections = sections ?? [];
 
     const socialLinks: FooterSocialLink[] = [
         {
-            icon: <IconBrandLinkedin className="size-4" stroke={1.8} />,
-            href: "#",
-            label: "LinkedIn",
+            icon: <IconBrandInstagram className="size-4" stroke={1.8} />,
+            href: "https://www.instagram.com/from.theorigin/",
+            label: "Instagram",
         },
         {
-            icon: <IconBrandFacebook className="size-4" stroke={1.8} />,
-            href: "#",
-            label: "Facebook",
-        },
-        {
-            icon: <IconBrandYoutube className="size-4" stroke={1.8} />,
-            href: "#",
-            label: "YouTube",
+            icon: <IconBrandTiktok className="size-4" stroke={1.8} />,
+            href: "https://www.tiktok.com/@from.the.origin",
+            label: "Tiktok",
         },
     ];
 
     return (
-        <footer className={cn("relative isolate overflow-hidden bg-background", className)}>
+        <footer
+            className={cn("relative isolate overflow-hidden bg-background", className)}
+        >
             <div className="mx-auto container px-4 py-16 sm:px-6 lg:px-8">
                 <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                     <div className="max-w-xl">
                         <div className="mb-3 flex items-center gap-2.5">
-                            <div
-                                className="mb-3 h-1 w-8 rounded-full"
+                            <span
+                                className="block h-0.5 w-7 shrink-0"
                                 style={{ backgroundColor: "var(--fto-red)" }}
                             />
+                            <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-primary">
+                                Footer
+                            </span>
                         </div>
 
                         <h2
@@ -164,7 +150,7 @@ const Footer = (props: Props) => {
                                 letterSpacing: "-0.01em",
                             }}
                         >
-                            Siap Melangkah
+                            Mulai Perjalanan
                             <br />
                             <span style={{ color: "var(--fto-red)" }}>Bersama FTO</span>
                         </h2>
@@ -179,7 +165,7 @@ const Footer = (props: Props) => {
 
                 <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
                     <div className="flex flex-col gap-6 lg:col-span-2">
-                        <Link href={logo?.url ?? "/"} className="flex w-fit items-center gap-2.5">
+                        <Link href={logo?.url ?? "#hero"} className="flex w-fit items-center gap-2.5">
                             {logo?.src && (
                                 <Image
                                     src={logo.src}
@@ -247,7 +233,7 @@ const Footer = (props: Props) => {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-3">
+                    <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-3">
                         {visibleSections.map((section, sectionIdx) => (
                             <div key={`${section.title}-${sectionIdx}`}>
                                 <h3 className="mb-4 text-sm font-semibold tracking-tight text-foreground">
@@ -273,19 +259,6 @@ const Footer = (props: Props) => {
 
                 <div className="mt-10 flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
                     <p className="text-xs text-muted-foreground">{copyright}</p>
-
-                    <ul className="flex flex-wrap gap-5 text-xs text-muted-foreground">
-                        {legalLinks?.map((link, linkIdx) => (
-                            <li key={`${link.name}-${linkIdx}`}>
-                                <Link
-                                    href={link.href}
-                                    className="transition-colors hover:text-primary"
-                                >
-                                    {link.name}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
                 </div>
             </div>
 
@@ -308,6 +281,4 @@ const Footer = (props: Props) => {
             )}
         </footer>
     );
-};
-
-export { Footer };
+}
