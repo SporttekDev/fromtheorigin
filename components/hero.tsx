@@ -1,6 +1,7 @@
-import { mosaicCards } from "@/lib/data";
+import { getWaLink, mosaicCards } from "@/lib/data";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
     return (
@@ -168,20 +169,29 @@ export default function Hero() {
                     Curating seamless sport, travel & leisure experiences worldwide
                 </p>
 
-                <div className="mt-7 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-8">
                     <Button
+                        asChild
                         size="lg"
-                        className="h-11 w-full sm:w-auto px-8 text-sm font-semibold"
+                        className="h-11 w-full px-8 text-sm font-semibold sm:w-auto"
                         style={{ backgroundColor: "var(--fto-red)", color: "white" }}
                     >
-                        Mulai Sekarang
+                        <Link
+                            href={getWaLink("Halo, saya ingin konsultasi layanan FTO.")}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Mulai Sekarang
+                        </Link>
                     </Button>
+
                     <Button
+                        asChild
                         size="lg"
                         variant="outline"
-                        className="h-11 w-full sm:w-auto border-white/40 bg-white/10 px-8 text-sm font-semibold text-white backdrop-blur-sm hover:bg-white/20 hover:text-white"
+                        className="h-11 w-full border-white/40 bg-white/10 px-8 text-sm font-semibold text-white backdrop-blur-sm hover:bg-white/20 hover:text-white sm:w-auto"
                     >
-                        Lihat Layanan
+                        <Link href="#services">Lihat Layanan</Link>
                     </Button>
                 </div>
             </div>
