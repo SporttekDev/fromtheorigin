@@ -270,14 +270,24 @@ export default function Footer(props: Props) {
                     className="pointer-events-none absolute inset-x-0 bottom-0 select-none overflow-hidden"
                 >
                     <p
-                        className="translate-y-1/4 text-center font-black uppercase leading-none text-foreground/5"
-                        style={{
-                            fontFamily: "var(--font-heading)",
-                            fontSize: "clamp(5rem, 20vw, 9rem)",
-                            letterSpacing: "-0.04em",
-                        }}
+                        className="
+        translate-y-1/4
+        text-center
+        font-heading
+        font-black
+        uppercase
+        leading-none
+        tracking-[-0.04em]
+        text-foreground/5
+      "
                     >
-                        {watermarkText}
+                        <span className="block lg:hidden text-[clamp(5rem,30vw,8rem)]">
+                            FTO
+                        </span>
+
+                        <span className="hidden lg:block text-[clamp(5rem,10.5vw,9rem)]">
+                            FROM THE ORIGIN
+                        </span>
                     </p>
                 </div>
             )}
