@@ -54,7 +54,7 @@ export const mosaicCards = [
     },
     {
         id: "corporate",
-        src: "/images/hero-coorporate-travel.jpg",
+        src: "/images/hero-corporate-travel.jpg",
         alt: "Corporate team travel",
         label: "Corporate Travel",
     },
@@ -75,12 +75,6 @@ export const mosaicCards = [
         src: "/images/hero-tailor-made.jpg",
         alt: "Tailor-made luxury travel",
         label: "Tailor-Made Travel",
-    },
-    {
-        id: "concierge",
-        src: "/images/hero-corporate-travel.jpg",
-        alt: "Luxury resort concierge",
-        label: "Concierge & Stay",
     },
 ];
 
