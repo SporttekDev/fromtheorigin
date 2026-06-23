@@ -78,7 +78,7 @@ export const mosaicCards = [
     },
     {
         id: "concierge",
-        src: "/images/hero-coorporate-travel.jpg",
+        src: "/images/hero-corporate-travel.jpg",
         alt: "Luxury resort concierge",
         label: "Concierge & Stay",
     },

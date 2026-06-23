@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     "From The Origin (FTO) adalah perusahaan sport tourism dan travel experience management berbasis di Indonesia yang menghadirkan perjalanan personal, curated, dan end-to-end untuk individu, komunitas, dan perusahaan.",
   keywords: [
     "From The Origin",
+    "from the origin",
     "FTO",
     "sport tourism",
     "travel experience management",
@@ -42,6 +43,9 @@ export const metadata: Metadata = {
     "wellness travel",
     "training camp",
     "event travel",
+    "jalan-jalan",
+    "travel",
+    
   ],
   authors: [{ name: "From The Origin (FTO)" }],
   creator: "From The Origin (FTO)",
@@ -81,6 +85,7 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       "max-image-preview": "large",
       "max-snippet": -1,
       "max-video-preview": -1,

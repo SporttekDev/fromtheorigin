@@ -3,6 +3,19 @@ import { Button } from "./ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
+const SIZES = {
+    mobile: "100vw",
+
+    tablet:
+        "(min-width: 768px) and (max-width: 1023px) calc(50vw - 1rem)",
+
+    desktopSide:
+        "(min-width: 1024px) 280px",
+
+    desktopCenter:
+        "(min-width: 1536px) 960px, (min-width: 1280px) calc(100vw - 600px), calc(100vw - 560px)",
+};
+
 export default function Hero() {
     return (
         <section id="hero" className="relative isolate w-full overflow-hidden h-dvh lg:h-[98dvh] min-h-155 max-h-240">
@@ -23,7 +36,7 @@ export default function Hero() {
                     fill
                     priority                      // ← LCP image, wajib priority
                     className="object-cover"
-                    sizes="100vw"
+                    sizes={SIZES.mobile}
                 />
                 <div className="absolute inset-0 bg-secondary-foreground/50" />
             </div>
@@ -40,11 +53,12 @@ export default function Hero() {
                     (card) => (
                         <div key={card.src} className="relative overflow-hidden rounded-xl">
                             <Image
+                                loading="lazy"
                                 src={card.src}
                                 alt={card.alt}
                                 fill
                                 className="object-cover"
-                                sizes="50vw"
+                                sizes={SIZES.tablet}
                             />
                             <div className="absolute inset-0 bg-secondary-foreground/55" />
                             <span className="absolute bottom-2.5 left-2.5 text-[9px] font-bold uppercase tracking-widest text-white/80">
@@ -66,12 +80,12 @@ export default function Hero() {
                 {/* Kiri atas */}
                 <div className="relative overflow-hidden rounded-2xl">
                     <Image
+                        loading="lazy"
                         src={mosaicCards[0].src}     // kiri atas
                         alt={mosaicCards[0].alt}
                         fill
                         className="object-cover"
-                        sizes="(max-width: 1024px) 0px, (max-width: 1280px) 220px, 280px"
-                        priority
+                        sizes={SIZES.desktopSide}
                     />
                     <div className="absolute inset-0 bg-secondary-foreground/60" />
                     <span className="absolute bottom-3 left-3 text-[10px] font-bold uppercase tracking-widest text-white/90">
@@ -86,7 +100,7 @@ export default function Hero() {
                         alt={mosaicCards[2].alt}
                         fill
                         className="object-cover object-[center_65%]"
-                        sizes="(max-width: 1024px) 0px, (max-width: 1280px) calc(100vw - 440px - 2rem), calc(1280px - 560px - 2rem)"
+                        sizes={SIZES.desktopCenter}
                         priority
                     />
                     <div className="absolute inset-0 bg-secondary-foreground/60" />
@@ -101,12 +115,12 @@ export default function Hero() {
                     style={{ gridColumn: "3", gridRow: "1 / 3" }}
                 >
                     <Image
+                        loading="lazy"
                         src={mosaicCards[4].src}
                         alt={mosaicCards[4].alt}
                         fill
                         className="object-cover"
-                        sizes="(max-width: 1024px) 0px, (max-width: 1280px) 220px, 280px"
-                        priority
+                        sizes={SIZES.desktopSide}
                     />
                     <div className="absolute inset-0 bg-secondary-foreground/60" />
                     <span className="absolute bottom-3 left-3 text-[10px] font-bold uppercase tracking-widest text-white/90">
@@ -117,12 +131,12 @@ export default function Hero() {
                 {/* Kiri bawah */}
                 <div className="relative overflow-hidden rounded-2xl">
                     <Image
+                        loading="lazy"
                         src={mosaicCards[1].src}
                         alt={mosaicCards[1].alt}
                         fill
                         className="object-cover"
-                        sizes="(max-width: 1024px) 0px, (max-width: 1280px) 220px, 280px"
-                        priority
+                        sizes={SIZES.desktopSide}
                     />
                     <div className="absolute inset-0 bg-secondary-foreground/60" />
                     <span className="absolute bottom-3 left-3 text-[10px] font-bold uppercase tracking-widest text-white/90">
@@ -137,7 +151,7 @@ export default function Hero() {
                         alt={mosaicCards[3].alt}
                         fill
                         className="object-cover object-[center_80%]"
-                        sizes="(max-width: 1024px) 0px, (max-width: 1280px) calc(100vw - 440px - 2rem), calc(1280px - 560px - 2rem)"
+                        sizes={SIZES.desktopCenter}
                         priority
                     />
                     <div className="absolute inset-0 bg-secondary-foreground/60" />
